@@ -1,0 +1,25 @@
+#include <iostream>
+
+int main() {
+    int N;
+    
+    // Зчитуємо чотирьохзначне число від користувача
+    std::cout << "Введіть чотирьохзначне число N: ";
+    std::cin >> N;
+    
+    if (N < 1000 || N > 9999) {
+        std::cout << "Введене число не є чотирьохзначним." << std::endl;
+    } else {
+        // Розбиваємо число на цифри та знаходимо їх суму
+        int thousands = N / 1000;
+        int hundreds = (N / 100) % 10;
+        int tens = (N / 10) % 10;
+        int ones = N % 10;
+        int sum = thousands + hundreds + tens + ones;
+        
+        // Виводимо результат
+        std::cout << "Сума цифр числа " << N << " дорівнює " << sum << std::endl;
+    }
+    
+    return 0;
+}
