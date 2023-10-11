@@ -1,0 +1,33 @@
+#include <iostream>
+
+int main() {
+    int A, B, C, D;
+    
+    // Зчитуємо значення A, B, C, та D
+    std::cout << "Введіть A (гривні): ";
+    std::cin >> A;
+    std::cout << "Введіть B (копійки): ";
+    std::cin >> B;
+    std::cout << "Введіть C (гривні, які Степан заплатив): ";
+    std::cin >> C;
+    std::cout << "Введіть D (копійки, які Степан заплатив): ";
+    std::cin >> D;
+
+    // Перевірка на допустимість введених значень
+    if (A < 0 || B < 0 || C < 0 || D < 0 || B >= 100 || D >= 100) {
+        std::cout << "Введені значення не відповідають умовам задачі." << std::endl;
+    } else {
+        // Обчислення решти
+        int total_paid = A * 100 + B;  // Переводимо всі суми в копійки
+        int amount_paid = C * 100 + D;
+        int change = total_paid - amount_paid;
+
+        // Виведення результату
+        int change_grivnas = change / 100;
+        int change_kopiykas = change % 100;
+
+        std::cout << change_grivnas << " " << change_kopiykas << std::endl;
+    }
+
+    return 0;
+}
