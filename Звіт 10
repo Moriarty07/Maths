@@ -1,0 +1,19 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+
+int main() {
+    std::string S;
+    
+    // Зчитуємо слово S
+    std::cout << "Введіть слово S: ";
+    std::cin >> S;
+
+    // Використовуємо функцію сортування для сортування літер в слові
+    std::sort(S.begin(), S.end());
+
+    // Виводимо відсортоване слово
+    std::cout << S << std::endl;
+
+    return 0;
+}
