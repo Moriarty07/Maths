@@ -1,0 +1,19 @@
+#include <iostream>
+
+int main() {
+    int number;
+
+    // Зчитуємо ціле число
+    std::cout << "Введіть ціле число: ";
+    std::cin >> number;
+
+    // Розраховуємо наступне та попереднє числа
+    int nextNumber = number + 1;
+    int previousNumber = number - 1;
+
+    // Виводимо результат у вказаному форматі
+    std::cout << "The next number for the number " << number << " is " << nextNumber << "." << std::endl;
+    std::cout << "The previous number for the number " << number << " is " << previousNumber << "." << std::endl;
+
+    return 0;
+}
