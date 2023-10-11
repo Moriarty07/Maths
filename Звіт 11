@@ -1,0 +1,28 @@
+#include <iostream>
+#include <vector>
+
+int main() {
+    int N;
+    std::cin >> N;
+    
+    std::vector<int> A(N);
+    
+    // Зчитуємо елементи масиву
+    for (int i = 0; i < N; ++i) {
+        std::cin >> A[i];
+    }
+
+    long long sum = 0; // Змінна для підрахунку суми
+
+    // Перебираємо рядки і стовпці матриці та додаємо до суми, якщо i >= j
+    for (int i = 0; i < N; ++i) {
+        for (int j = 0; j <= i; ++j) {
+            sum += A[i] * A[j];
+        }
+    }
+
+    // Виводимо результат
+    std::cout << sum << std::endl;
+
+    return 0;
+}
