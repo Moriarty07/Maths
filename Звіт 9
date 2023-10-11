@@ -1,0 +1,33 @@
+#include <iostream>
+#include <string>
+
+int countSubstrings(const std::string& s, const std::string& target) {
+    int count = 0;
+    for (size_t i = 0; i <= s.length() - target.length(); ++i) {
+        if (s.substr(i, target.length()) == target) {
+            count++;
+        }
+    }
+    return count;
+}
+
+int main() {
+    std::string S;
+    int K;
+
+    // Зчитуємо рядок S та число K
+    std::cout << "Введіть рекламний рядок S: ";
+    std::cin >> S;
+    std::cout << "Введіть число K: ";
+    std::cin >> K;
+
+    std::string target = "slonyk";
+    
+    // Рахуємо кількість можливих підрядків за вимогами Петрика
+    int result = countSubstrings(S, target);
+
+    // Виводимо результат
+    std::cout << "Кількість можливих підрядків: " << result << std::endl;
+
+    return 0;
+}
